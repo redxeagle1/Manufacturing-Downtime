@@ -1,4 +1,4 @@
-table Products
+table dProducts
 	lineageTag: 3df3ca64-8263-4306-a8c5-2c25c60a74be
 
 	column Product
@@ -34,7 +34,7 @@ table Products
 
 		annotation SummarizationSetBy = Automatic
 
-	partition Products = m
+	partition dProducts = m
 		mode: import
 		source =
 				let

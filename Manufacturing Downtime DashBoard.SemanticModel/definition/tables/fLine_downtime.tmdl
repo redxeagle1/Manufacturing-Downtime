@@ -1,0 +1,69 @@
+table fLine_downtime
+	lineageTag: 7ece85f6-3741-41bd-b906-0abc14aae4d1
+
+	column Batch
+		dataType: string
+		lineageTag: 15db113a-9fa2-41fd-b7f1-e05265fe948c
+		summarizeBy: none
+		sourceColumn: Batch
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Downtime Factor'
+		dataType: string
+		lineageTag: eecac055-d3b4-4ea4-a312-7a88a3ac7b22
+		summarizeBy: none
+		sourceColumn: Downtime Factor
+
+		annotation SummarizationSetBy = Automatic
+
+	column Downtime(min)
+		dataType: int64
+		formatString: 0
+		lineageTag: 26e579e3-9ab2-44c4-af49-8cefaef83a01
+		summarizeBy: sum
+		sourceColumn: Downtime(min)
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fLine_downtime = m
+		mode: import
+		source = ```
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\saad\Downloads\Manufacturing Downtime\Manufacturing_Line_Productivity.xlsx"), null, true),
+				    #"Line downtime_Sheet" = Source{[Item="Line downtime",Kind="Sheet"]}[Data],
+				    // this step include promoting 2 rows as headers to get around the double header issue
+				    #"Promoted 2 rows as Headers in a row" = 
+				    // the 2nd row
+				    Table.PromoteHeaders(
+				        // the 1st row
+				        Table.PromoteHeaders(
+				            #"Line downtime_Sheet",// the prev step
+				            [PromoteAllScalars=true]// the 1st targeted row parameter
+				            ),
+				        // the 2nd targeted row parameter
+				    [PromoteAllScalars=true]
+				    ),
+				    
+				    #"Unpivoted Other Columns" = Table.UnpivotOtherColumns(#"Promoted 2 rows as Headers in a row", {"Batch"}, "Attribute", "Value"), 
+				
+				    // this step includes changing some columns' names and all the data type of all columns
+				    #"Finished touches" = 
+				    // change the data type of each column
+				    Table.TransformColumnTypes(
+				        // rename the vague headers [Attribute,Value] into descriptive ones [Downtime Factor,Downtime(min)]
+				        Table.RenameColumns(
+				            #"Unpivoted Other Columns", // the prev step
+				            {{"Attribute", "Downtime Factor"}, {"Value", "Downtime(min)"}}
+				        ),
+				        // the change type code
+				        {{"Batch", type text}, {"Downtime Factor", type text}, {"Downtime(min)", Int64.Type}}
+				        )
+				in
+				    #"Finished touches"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

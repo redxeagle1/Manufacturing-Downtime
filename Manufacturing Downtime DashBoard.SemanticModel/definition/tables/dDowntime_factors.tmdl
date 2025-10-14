@@ -1,12 +1,11 @@
-table 'Downtime factors'
+table dDowntime_factors
 	lineageTag: 86b5a007-a82d-4422-bd02-1c64e0c44b39
 
-	column Factor
-		dataType: int64
-		formatString: 0
+	column 'Downtime Factor'
+		dataType: string
 		lineageTag: 4dc86813-11f2-4401-95de-e1ff12a2d753
-		summarizeBy: sum
-		sourceColumn: Factor
+		summarizeBy: none
+		sourceColumn: Downtime Factor
 
 		annotation SummarizationSetBy = Automatic
 
@@ -26,16 +25,17 @@ table 'Downtime factors'
 
 		annotation SummarizationSetBy = Automatic
 
-	partition 'Downtime factors' = m
+	partition dDowntime_factors = m
 		mode: import
 		source =
 				let
 				    Source = Excel.Workbook(File.Contents("C:\Users\saad\Downloads\Manufacturing Downtime\Manufacturing_Line_Productivity.xlsx"), null, true),
 				    #"Downtime factors_Sheet" = Source{[Item="Downtime factors",Kind="Sheet"]}[Data],
 				    #"Promoted Headers" = Table.PromoteHeaders(#"Downtime factors_Sheet", [PromoteAllScalars=true]),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Factor", Int64.Type}, {"Description", type text}, {"Operator Error", type text}})
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Factor", type text}, {"Description", type text}, {"Operator Error", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Factor", "Downtime Factor"}})
 				in
-				    #"Changed Type"
+				    #"Renamed Columns"
 
 	annotation PBI_NavigationStepName = Navigation
 

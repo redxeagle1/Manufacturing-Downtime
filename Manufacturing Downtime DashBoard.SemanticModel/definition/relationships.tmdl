@@ -1,23 +1,17 @@
 relationship b6d948cd-a9a5-4a94-a567-59ba773dce11
 	joinOnDateBehavior: datePartOnly
-	fromColumn: 'Line productivity'.Date
+	fromColumn: dLine_productivity.Date
 	toColumn: LocalDateTable_0dce9b95-cc04-4b76-8451-9ec80e763688.Date
 
-relationship 67e9e51a-8427-48a5-adc5-81af94cfe506
-	joinOnDateBehavior: datePartOnly
-	fromColumn: 'Line productivity'.'Start Time'
-	toColumn: LocalDateTable_0d8812f0-89f8-42df-94f9-c9e2357afd08.Date
-
-relationship 8434d7ed-9462-4a0d-ba9a-01d9ec821140
-	joinOnDateBehavior: datePartOnly
-	fromColumn: 'Line productivity'.'End Time'
-	toColumn: LocalDateTable_92a3e330-e684-4c09-bd79-578707129a9c.Date
-
 relationship AutoDetected_984229ac-062c-4bc6-93c1-a7ba85277c31
-	fromColumn: 'Line downtime'.Batch
-	toColumn: 'Line productivity'.Batch
+	fromColumn: fLine_downtime.Batch
+	toColumn: dLine_productivity.Batch
 
 relationship AutoDetected_8223df51-0321-4530-8736-9b3321fe7498
-	fromColumn: 'Line productivity'.Product
-	toColumn: Products.Product
+	fromColumn: dLine_productivity.Product
+	toColumn: dProducts.Product
+
+relationship AutoDetected_d32d1626-ec34-4dba-9dcb-2bf4cdb5f245
+	fromColumn: fLine_downtime.'Downtime Factor'
+	toColumn: dDowntime_factors.'Downtime Factor'
 

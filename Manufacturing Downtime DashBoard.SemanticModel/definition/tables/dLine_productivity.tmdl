@@ -1,4 +1,4 @@
-table 'Line productivity'
+table dLine_productivity
 	lineageTag: f0a1575d-c59f-461c-b700-b975a7b33fe3
 
 	column Date
@@ -26,8 +26,7 @@ table 'Line productivity'
 		annotation SummarizationSetBy = Automatic
 
 	column Batch
-		dataType: int64
-		formatString: 0
+		dataType: string
 		lineageTag: 9a5762b0-dca8-4954-a0bb-1d18be036b8f
 		summarizeBy: none
 		sourceColumn: Batch
@@ -44,48 +43,35 @@ table 'Line productivity'
 
 	column 'Start Time'
 		dataType: dateTime
-		formatString: General Date
+		formatString: Long Time
 		lineageTag: a7aa728b-2dfc-4ffa-a6b2-b2d71a0e6fa8
 		summarizeBy: none
 		sourceColumn: Start Time
 
-		variation Variation
-			isDefault
-			relationship: 67e9e51a-8427-48a5-adc5-81af94cfe506
-			defaultHierarchy: LocalDateTable_0d8812f0-89f8-42df-94f9-c9e2357afd08.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
 
 	column 'End Time'
 		dataType: dateTime
-		formatString: General Date
+		formatString: Long Time
 		lineageTag: 81e20047-378b-45d1-8370-ccb3bc1bea9c
 		summarizeBy: none
 		sourceColumn: End Time
 
-		variation Variation
-			isDefault
-			relationship: 8434d7ed-9462-4a0d-ba9a-01d9ec821140
-			defaultHierarchy: LocalDateTable_92a3e330-e684-4c09-bd79-578707129a9c.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
-	column Column7
-		dataType: string
-		lineageTag: a618ad1c-085d-4414-89ec-cab5b05db0e2
-		summarizeBy: none
-		sourceColumn: Column7
+		annotation UnderlyingDateTimeDataType = Time
 
-		annotation SummarizationSetBy = Automatic
-
-	partition 'Line productivity' = m
+	partition dLine_productivity = m
 		mode: import
 		source =
 				let
 				    Source = Excel.Workbook(File.Contents("C:\Users\saad\Downloads\Manufacturing Downtime\Manufacturing_Line_Productivity.xlsx"), null, true),
 				    #"Line productivity_Sheet" = Source{[Item="Line productivity",Kind="Sheet"]}[Data],
 				    #"Promoted Headers" = Table.PromoteHeaders(#"Line productivity_Sheet", [PromoteAllScalars=true]),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Date", type date}, {"Product", type text}, {"Batch", Int64.Type}, {"Operator", type text}, {"Start Time", type datetime}, {"End Time", type datetime}, {"Column7", type any}})
+				    #"Removed Other Columns" = Table.SelectColumns(#"Promoted Headers",{"Date", "Product", "Batch", "Operator", "Start Time", "End Time"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Other Columns",{{"Date", type date}, {"Product", type text}, {"Batch", type text}, {"Operator", type text}, {"Start Time", type time}, {"End Time", type time}})
 				in
 				    #"Changed Type"
 
