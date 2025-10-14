@@ -1,11 +1,11 @@
 table dDowntime_factors
 	lineageTag: 86b5a007-a82d-4422-bd02-1c64e0c44b39
 
-	column 'Downtime Factor'
+	column Factor
 		dataType: string
 		lineageTag: 4dc86813-11f2-4401-95de-e1ff12a2d753
 		summarizeBy: none
-		sourceColumn: Downtime Factor
+		sourceColumn: Factor
 
 		annotation SummarizationSetBy = Automatic
 
@@ -32,10 +32,9 @@ table dDowntime_factors
 				    Source = Excel.Workbook(File.Contents("C:\Users\saad\Downloads\Manufacturing Downtime\Manufacturing_Line_Productivity.xlsx"), null, true),
 				    #"Downtime factors_Sheet" = Source{[Item="Downtime factors",Kind="Sheet"]}[Data],
 				    #"Promoted Headers" = Table.PromoteHeaders(#"Downtime factors_Sheet", [PromoteAllScalars=true]),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Factor", type text}, {"Description", type text}, {"Operator Error", type text}}),
-				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Factor", "Downtime Factor"}})
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Factor", type text}, {"Description", type text}, {"Operator Error", type text}})
 				in
-				    #"Renamed Columns"
+				    #"Changed Type"
 
 	annotation PBI_NavigationStepName = Navigation
 

@@ -13,5 +13,5 @@ relationship AutoDetected_8223df51-0321-4530-8736-9b3321fe7498
 
 relationship AutoDetected_d32d1626-ec34-4dba-9dcb-2bf4cdb5f245
 	fromColumn: fLine_downtime.'Downtime Factor'
-	toColumn: dDowntime_factors.'Downtime Factor'
+	toColumn: dDowntime_factors.Factor
 
