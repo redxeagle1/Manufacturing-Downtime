@@ -1,0 +1,14 @@
+DEFINE
+	MEASURE 'Key Measures'[Average Deviation from Minimum Batch Time] = CALCULATE(AVERAGEX(
+			dLine_productivity,
+				dLine_productivity[Total Time] - RELATED(dProducts[Min batch time])
+		)
+		)
+
+EVALUATE
+SUMMARIZECOLUMNS(
+    dLine_productivity[Operator],
+    "Average Deviation", [Average Deviation from Minimum Batch Time]
+)
+ORDER BY
+    [Average Deviation] DESC

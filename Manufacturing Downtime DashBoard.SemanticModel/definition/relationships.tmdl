@@ -19,3 +19,13 @@ relationship 5d64414b-0292-c32d-651e-7e28421a1736
 	fromColumn: dLine_productivity.Date
 	toColumn: dcalender.Date
 
+relationship 9a363d1d-f735-4295-83af-80531f2cf861
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dLine_productivity.'Start DateTime'
+	toColumn: LocalDateTable_d02d3d0a-5f05-4615-9b4e-9722890a84f5.Date
+
+relationship b6f16465-7636-4727-a104-26148448d8bf
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dLine_productivity.'End DateTime'
+	toColumn: LocalDateTable_4bf8f59c-a0b2-4c31-b8d0-f3d7af9d1196.Date
+

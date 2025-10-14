@@ -10,8 +10,8 @@
       "nodes": [
         {
           "location": {
-            "x": 858.38305001469382,
-            "y": 326
+            "x": 782.27906006379351,
+            "y": 472.57064731284515
           },
           "nodeIndex": "dDowntime_factors",
           "nodeLineageTag": "86b5a007-a82d-4422-bd02-1c64e0c44b39",
@@ -19,7 +19,7 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 1
         },
         {
           "location": {
@@ -32,7 +32,7 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 2
         },
         {
           "location": {
@@ -44,7 +44,7 @@
             "height": 248,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 5
         },
         {
           "location": {
@@ -57,7 +57,7 @@
             "height": 176,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 3
         },
         {
           "location": {
@@ -70,11 +70,23 @@
             "height": 200,
             "width": 234
           },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 1142.3830500146937,
+            "y": 198
+          },
+          "nodeIndex": "Key Measures",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
           "zIndex": 0
         }
       ],
       "name": "All tables",
-      "zoomValue": 100,
+      "zoomValue": 70.95554390096882,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,

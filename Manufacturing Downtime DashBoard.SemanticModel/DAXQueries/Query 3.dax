@@ -1,0 +1,13 @@
+DEFINE
+	MEASURE 'Key Measures'[Percentage of Batches Exceeding Minimum Time] =
+		DIVIDE(
+			CALCULATE(
+				COUNT(dLine_productivity[Batch]),
+				FILTER(dLine_productivity,'dLine_productivity'[Total Time] = RELATED(dProducts[Min batch time]))
+			),
+			COUNT(dLine_productivity[Batch])
+		)
+EVALUATE
+	SUMMARIZECOLUMNS(
+		"measureءذ", 'Key Measures'[Percentage of Batches Exceeding Minimum Time]
+	)

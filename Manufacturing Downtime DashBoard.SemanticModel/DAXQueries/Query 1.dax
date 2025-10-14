@@ -1,0 +1,15 @@
+// Welcome to DAX query view! Learn more about DAX queries at https://aka.ms/dax-queries.
+// Right-click on tables, columns, or measures in the data pane to access quick queries, or ask Copilot for help writing DAX.
+DEFINE
+	MEASURE 'Key Measures'[Percentage of Downtime due to Operator Error] =
+		DIVIDE(
+			CALCULATE(
+				SUM(fLine_downtime[Downtime(min)]),
+				'dDowntime_factors'[Operator Error] = "Yes"
+			),
+			[Total Downtime]
+		)
+EVALUATE
+	SUMMARIZECOLUMNS(
+		"measure", 'Key Measures'[Percentage of Downtime due to Operator Error]
+	)

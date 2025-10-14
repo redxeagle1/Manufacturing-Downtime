@@ -1,0 +1,180 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "cc103dd70e24d2ee0348",
+  "position": {
+    "x": 9.6055210305030236,
+    "y": 0,
+    "z": 0,
+    "height": 300.51558652573749,
+    "width": 941.34106098929635
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dLine_productivity"
+                    }
+                  },
+                  "Property": "Operator"
+                }
+              },
+              "queryRef": "dLine_productivity.Operator",
+              "nativeQueryRef": "Operator"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dLine_productivity"
+                    }
+                  },
+                  "Property": "Batch"
+                }
+              },
+              "queryRef": "dLine_productivity.Batch",
+              "nativeQueryRef": "Batch"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dLine_productivity"
+                        }
+                      },
+                      "Property": "Total Time"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(dLine_productivity.Total Time)",
+              "nativeQueryRef": "Sum of Total Time"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Key Measures"
+                    }
+                  },
+                  "Property": "Total Downtime"
+                }
+              },
+              "queryRef": "Key Measures.Total Downtime",
+              "nativeQueryRef": "Total Downtime"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Key Measures"
+                    }
+                  },
+                  "Property": "Percentage of Downtime due to Operator Error"
+                }
+              },
+              "queryRef": "Key Measures.Percentage of Downtime due to Operator Error",
+              "nativeQueryRef": "Percentage of Downtime due to Operator Error"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "ff96457063697e901d45",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dLine_productivity"
+              }
+            },
+            "Property": "Batch"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "5fbf7320c43ead704dc2",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dLine_productivity"
+                  }
+                },
+                "Property": "Total Time"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "2da8b5e8d410e5954146",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Key Measures"
+              }
+            },
+            "Property": "Total Downtime"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f7adecf509ec0c5e2134",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Key Measures"
+              }
+            },
+            "Property": "Percentage of Downtime due to Operator Error"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a73139451c2647555b0e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dLine_productivity"
+              }
+            },
+            "Property": "Operator"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}
