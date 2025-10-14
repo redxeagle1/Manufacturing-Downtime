@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Manufacturing Downtime DashBoard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "09e12696-df2b-4819-8f3c-aa9125d961fa"
+  }
+}

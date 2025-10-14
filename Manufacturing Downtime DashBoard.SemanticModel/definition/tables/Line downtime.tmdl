@@ -1,0 +1,45 @@
+table 'Line downtime'
+	lineageTag: 7ece85f6-3741-41bd-b906-0abc14aae4d1
+
+	column Batch
+		dataType: int64
+		formatString: 0
+		lineageTag: 15db113a-9fa2-41fd-b7f1-e05265fe948c
+		summarizeBy: none
+		sourceColumn: Batch
+
+		annotation SummarizationSetBy = Automatic
+
+	column Attribute
+		dataType: string
+		lineageTag: 6f9ccef6-b26d-4400-a489-5a24c91ccb2c
+		summarizeBy: none
+		sourceColumn: Attribute
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		dataType: string
+		lineageTag: 1da3f03a-c611-4a80-a0eb-7554bcd6ab91
+		summarizeBy: none
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Line downtime' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\saad\Downloads\Manufacturing Downtime\Manufacturing_Line_Productivity.xlsx"), null, true),
+				    #"Line downtime_Sheet" = Source{[Item="Line downtime",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Line downtime_Sheet", [PromoteAllScalars=true]),
+				    #"Promoted Headers1" = Table.PromoteHeaders(#"Promoted Headers", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers1",{{"Batch", Int64.Type}, {"1", type any}, {"2", Int64.Type}, {"3", Int64.Type}, {"4", Int64.Type}, {"5", Int64.Type}, {"6", Int64.Type}, {"7", Int64.Type}, {"8", Int64.Type}, {"9", Int64.Type}, {"10", Int64.Type}, {"11", Int64.Type}, {"12", Int64.Type}}),
+				    #"Unpivoted Other Columns" = Table.UnpivotOtherColumns(#"Changed Type", {"Batch"}, "Attribute", "Value")
+				in
+				    #"Unpivoted Other Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

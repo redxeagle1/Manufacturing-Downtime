@@ -1,0 +1,25 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Downtime factors","Line downtime","Line productivity","Products"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'Downtime factors'
+ref table 'Line downtime'
+ref table 'Line productivity'
+ref table DateTableTemplate_0651b3d3-d476-472c-8684-88043c55f21d
+ref table LocalDateTable_0dce9b95-cc04-4b76-8451-9ec80e763688
+ref table LocalDateTable_0d8812f0-89f8-42df-94f9-c9e2357afd08
+ref table LocalDateTable_92a3e330-e684-4c09-bd79-578707129a9c
+ref table Products
+
+ref cultureInfo en-US
+

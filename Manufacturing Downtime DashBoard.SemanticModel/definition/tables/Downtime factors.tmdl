@@ -1,0 +1,43 @@
+table 'Downtime factors'
+	lineageTag: 86b5a007-a82d-4422-bd02-1c64e0c44b39
+
+	column Factor
+		dataType: int64
+		formatString: 0
+		lineageTag: 4dc86813-11f2-4401-95de-e1ff12a2d753
+		summarizeBy: sum
+		sourceColumn: Factor
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: ed9b57bc-47e2-4d5f-bfaa-e6d1d37b3c8c
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Operator Error'
+		dataType: string
+		lineageTag: 3c4a1c99-7061-42e0-8ead-2c15b4029034
+		summarizeBy: none
+		sourceColumn: Operator Error
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Downtime factors' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\saad\Downloads\Manufacturing Downtime\Manufacturing_Line_Productivity.xlsx"), null, true),
+				    #"Downtime factors_Sheet" = Source{[Item="Downtime factors",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Downtime factors_Sheet", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Factor", Int64.Type}, {"Description", type text}, {"Operator Error", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

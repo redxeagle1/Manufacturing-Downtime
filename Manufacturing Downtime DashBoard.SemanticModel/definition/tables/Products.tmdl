@@ -1,0 +1,51 @@
+table Products
+	lineageTag: 3df3ca64-8263-4306-a8c5-2c25c60a74be
+
+	column Product
+		dataType: string
+		lineageTag: 39bb5a01-18e4-45db-ae71-cae001022721
+		summarizeBy: none
+		sourceColumn: Product
+
+		annotation SummarizationSetBy = Automatic
+
+	column Flavor
+		dataType: string
+		lineageTag: 8867143c-2ac8-46ff-b2cc-f52f812eaf99
+		summarizeBy: none
+		sourceColumn: Flavor
+
+		annotation SummarizationSetBy = Automatic
+
+	column Size
+		dataType: string
+		lineageTag: c07be8b2-1503-4e4d-8ed7-eda50efa7aa6
+		summarizeBy: none
+		sourceColumn: Size
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Min batch time'
+		dataType: int64
+		formatString: 0
+		lineageTag: ea786d77-1fd5-4cfa-8c32-5fd4ef0fc006
+		summarizeBy: none
+		sourceColumn: Min batch time
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Products = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\saad\Downloads\Manufacturing Downtime\Manufacturing_Line_Productivity.xlsx"), null, true),
+				    Products_Sheet = Source{[Item="Products",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Products_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Product", type text}, {"Flavor", type text}, {"Size", type text}, {"Min batch time", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
