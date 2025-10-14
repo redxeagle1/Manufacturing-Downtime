@@ -16,8 +16,9 @@ ref table dDowntime_factors
 ref table fLine_downtime
 ref table dLine_productivity
 ref table DateTableTemplate_0651b3d3-d476-472c-8684-88043c55f21d
-ref table LocalDateTable_0dce9b95-cc04-4b76-8451-9ec80e763688
 ref table dProducts
+ref table dcalender
+ref table LocalDateTable_e1fbed65-0c67-4ce9-9f2f-c65b43a68ec9
 
 ref cultureInfo en-US
 

@@ -1,0 +1,25 @@
+table dcalender
+	lineageTag: 7a85cb1b-251e-460b-b5f4-e9bed43ca8a2
+
+	column Date
+		formatString: General Date
+		lineageTag: f9bd17fd-61b9-453d-ba4c-9665dc6369bb
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		variation Variation
+			isDefault
+			relationship: caff917d-1173-4d74-b726-1467aafaf5f1
+			defaultHierarchy: LocalDateTable_e1fbed65-0c67-4ce9-9f2f-c65b43a68ec9.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dcalender = calculated
+		mode: import
+		source = ```
+				CALENDARAUTO() 
+				```
+
+	annotation PBI_Id = 9b853b096e654de3877b2d8e4d25aec1
+

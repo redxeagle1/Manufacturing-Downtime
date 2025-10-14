@@ -1,8 +1,3 @@
-relationship b6d948cd-a9a5-4a94-a567-59ba773dce11
-	joinOnDateBehavior: datePartOnly
-	fromColumn: dLine_productivity.Date
-	toColumn: LocalDateTable_0dce9b95-cc04-4b76-8451-9ec80e763688.Date
-
 relationship AutoDetected_984229ac-062c-4bc6-93c1-a7ba85277c31
 	fromColumn: fLine_downtime.Batch
 	toColumn: dLine_productivity.Batch
@@ -14,4 +9,13 @@ relationship AutoDetected_8223df51-0321-4530-8736-9b3321fe7498
 relationship AutoDetected_d32d1626-ec34-4dba-9dcb-2bf4cdb5f245
 	fromColumn: fLine_downtime.'Downtime Factor'
 	toColumn: dDowntime_factors.Factor
+
+relationship caff917d-1173-4d74-b726-1467aafaf5f1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dcalender.Date
+	toColumn: LocalDateTable_e1fbed65-0c67-4ce9-9f2f-c65b43a68ec9.Date
+
+relationship 5d64414b-0292-c32d-651e-7e28421a1736
+	fromColumn: dLine_productivity.Date
+	toColumn: dcalender.Date
 

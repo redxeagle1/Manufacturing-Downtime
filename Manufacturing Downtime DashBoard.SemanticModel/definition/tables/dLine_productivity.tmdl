@@ -8,11 +8,6 @@ table dLine_productivity
 		summarizeBy: none
 		sourceColumn: Date
 
-		variation Variation
-			isDefault
-			relationship: b6d948cd-a9a5-4a94-a567-59ba773dce11
-			defaultHierarchy: LocalDateTable_0dce9b95-cc04-4b76-8451-9ec80e763688.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
