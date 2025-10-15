@@ -1,0 +1,29 @@
+table Summarize_Factor
+	lineageTag: 2974ab4c-5967-4756-914c-06c68fe7ce28
+
+	column Factor
+		lineageTag: 9a3e1060-421b-4ae3-8500-fca76e51757a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: dDowntime_factors[Factor]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'total minites'
+		formatString: 0
+		lineageTag: f1954b74-5ce3-4339-adfd-30117250329c
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [total minites]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Summarize_Factor = calculated
+		mode: import
+		source = ```
+				
+				 SUMMARIZE(fLine_downtime,dDowntime_factors[Factor],"total minites",SUM(fLine_downtime[Downtime(min)]))
+				```
+
+	annotation PBI_Id = 3d55c6e1b64a4d46aeb60d6e56d31789
+

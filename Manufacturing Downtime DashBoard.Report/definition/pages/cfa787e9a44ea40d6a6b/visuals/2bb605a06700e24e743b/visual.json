@@ -1,0 +1,84 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "2bb605a06700e24e743b",
+  "position": {
+    "x": 10,
+    "y": 311,
+    "z": 2,
+    "height": 239,
+    "width": 941,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dLine_productivity"
+                    }
+                  },
+                  "Property": "Operator"
+                }
+              },
+              "queryRef": "dLine_productivity.Operator",
+              "nativeQueryRef": "Operator"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Key Measures"
+                    }
+                  },
+                  "Property": "Operator Efficiency"
+                }
+              },
+              "queryRef": "Key Measures.Operator Efficiency",
+              "nativeQueryRef": "Operator Efficiency"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "9ee18b5603d90010d218",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dLine_productivity"
+              }
+            },
+            "Property": "Operator"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "9d3e28ada8a35a049372",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Key Measures"
+              }
+            },
+            "Property": "Operator Efficiency"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

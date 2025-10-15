@@ -35,6 +35,20 @@ table 'Key Measures'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Operator Efficiency' =
+			DIVIDE(
+						[Total Downtime],
+						COUNT(dLine_productivity[Batch])
+					)
+		lineageTag: 0bc4a67a-5c57-4f6b-9d03-d842d2519979
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Availability Loss' = DIVIDE([Total Downtime],sum(dLine_productivity[Total Time]),0)
+		lineageTag: bef9af73-5b7c-4660-ac23-b662587cbcd2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column Column
 		isHidden
 		formatString: 0

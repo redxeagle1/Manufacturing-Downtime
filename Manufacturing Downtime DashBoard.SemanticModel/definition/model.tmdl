@@ -22,6 +22,8 @@ ref table LocalDateTable_e1fbed65-0c67-4ce9-9f2f-c65b43a68ec9
 ref table 'Key Measures'
 ref table LocalDateTable_d02d3d0a-5f05-4615-9b4e-9722890a84f5
 ref table LocalDateTable_4bf8f59c-a0b2-4c31-b8d0-f3d7af9d1196
+ref table Summarize_Factor
+ref table Summarize_products
 
 ref cultureInfo en-US
 

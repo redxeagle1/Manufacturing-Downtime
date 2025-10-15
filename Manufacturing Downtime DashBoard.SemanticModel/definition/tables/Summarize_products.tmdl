@@ -1,0 +1,29 @@
+table Summarize_products
+	lineageTag: acb771e2-0bb9-45a1-9d05-2890758e2c26
+
+	column Product
+		lineageTag: 6678b057-56f3-4994-b88a-d9e78404d9aa
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: dLine_productivity[Product]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'AVG Batch minites'
+		formatString: 0
+		lineageTag: 647290dd-6aa3-464d-925d-102ede47e0af
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [AVG Batch minites]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Summarize_products = calculated
+		mode: import
+		source = ```
+				
+				 SUMMARIZE(dLine_productivity,dLine_productivity[Product],"AVG Batch minites",SUM(dLine_productivity[Total Time]))
+				```
+
+	annotation PBI_Id = 60892e8e6c6a47f2bf43c0af0766371f
+

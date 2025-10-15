@@ -1,9 +1,12 @@
 DEFINE
-    MEASURE 'Key Measures'[Operator Efficiency] = SUM(fLine_downtime[Downtime(min)])
-	 // (Total Downtime for Operator) / (Number of Batches Managed)                     
+	MEASURE 'Key Measures'[Operator Efficiency] = DIVIDE(
+			[Total Downtime],
+			COUNT(dLine_productivity[Batch])
+		)
+// (Total Downtime for Operator) / (Number of Batches Managed)                     
 
 
 EVALUATE
-    SUMMARIZECOLUMNS(
-        "Total Downtime", [Operator Efficiency]
-    )
+	SUMMARIZECOLUMNS(
+		"Total Downtime", [Operator Efficiency]
+	)

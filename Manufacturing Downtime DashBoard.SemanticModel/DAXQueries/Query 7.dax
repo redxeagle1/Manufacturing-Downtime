@@ -1,0 +1,7 @@
+DEFINE
+    MEASURE 'Key Measures'[Availability Loss] = DIVIDE([Total Downtime],sum(dLine_productivity[Total Time]),0)
+
+EVALUATE
+    SUMMARIZECOLUMNS(
+        "Total Downtime", [Availability Loss]
+    )
