@@ -2,23 +2,22 @@ table 'Key Measures'
 	lineageTag: 9e52f202-ed14-4c05-acfe-cb9118c1b66b
 
 	measure 'Total Downtime' = SUM(fLine_downtime[Downtime(min)])
-		formatString: 0
+		formatString: #,0
 		lineageTag: c081e0a6-d8b1-4d07-ba9a-64123f50f18c
 
 	measure 'Percentage of Downtime due to Operator Error' =
 			
 			DIVIDE(CALCULATE(SUM(fLine_downtime[Downtime(min)]),'dDowntime_factors'[Operator Error] ="Yes"),[Total Downtime])
+		formatString: #,0.00%;-#,0.00%;#,0.00%
 		lineageTag: 77a8424e-5754-4560-8bc6-5edd34c019fa
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure 'Average Deviation from Minimum Batch Time' = ```
+	measure 'Average Deviation from Minimum Batch Time' =
 			
-						CALCULATE(
-							AVERAGEX(dLine_productivity,SUMX(dLine_productivity,dLine_productivity[Total Time] - RELATED(dProducts[Min batch time])))
-						)
-			```
-		formatString: 0
+			AVERAGEX(
+			    dLine_productivity,
+			    dLine_productivity[Total Time] - RELATED(dProducts[Min batch time])
+			)
+		formatString: #,0.00
 		lineageTag: 1ebaa9c8-0eae-46fc-9fff-f3c3b7e1c56b
 
 	measure 'Percentage of Batches Exceeding Minimum Time' = ```
@@ -31,23 +30,20 @@ table 'Key Measures'
 						COUNT(dLine_productivity[Batch])
 					)
 			```
+		formatString: #,0.00%;-#,0.00%;#,0.00%
 		lineageTag: e90126e3-b8ff-4595-8ae2-42dc3f3a3b9e
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Operator Efficiency' =
 			DIVIDE(
 						[Total Downtime],
 						COUNT(dLine_productivity[Batch])
 					)
+		formatString: #,0.00%;-#,0.00%;#,0.00%
 		lineageTag: 0bc4a67a-5c57-4f6b-9d03-d842d2519979
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure 'Availability Loss' = DIVIDE([Total Downtime],sum(dLine_productivity[Total Time]),0)
+	measure 'Availability Loss' = CALCULATE(DIVIDE([Total Downtime],sum(dLine_productivity[Total Time]),0))
+		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: bef9af73-5b7c-4660-ac23-b662587cbcd2
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Column
 		isHidden

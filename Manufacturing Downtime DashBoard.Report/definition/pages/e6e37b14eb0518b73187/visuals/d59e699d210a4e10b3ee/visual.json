@@ -1,0 +1,282 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "d59e699d210a4e10b3ee",
+  "position": {
+    "x": 16,
+    "y": 80,
+    "z": 0,
+    "height": 176,
+    "width": 1232
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dLine_productivity"
+                        }
+                      },
+                      "Property": "Batch"
+                    }
+                  },
+                  "Function": 2
+                }
+              },
+              "queryRef": "Min(dLine_productivity.Batch)",
+              "nativeQueryRef": "total Batch",
+              "displayName": "total Batch"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dLine_productivity"
+                        }
+                      },
+                      "Property": "Total Time"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(dLine_productivity.Total Time)",
+              "nativeQueryRef": "Total Time",
+              "displayName": "Total Time"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Key Measures"
+                    }
+                  },
+                  "Property": "Total Downtime"
+                }
+              },
+              "queryRef": "Key Measures.Total Downtime",
+              "nativeQueryRef": "Total Downtime"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Key Measures"
+                    }
+                  },
+                  "Property": "Average Deviation from Minimum Batch Time"
+                }
+              },
+              "queryRef": "Key Measures.Average Deviation from Minimum Batch Time",
+              "nativeQueryRef": "Average Deviation from Minimum Batch Time"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Key Measures"
+                    }
+                  },
+                  "Property": "Availability Loss"
+                }
+              },
+              "queryRef": "Key Measures.Availability Loss",
+              "nativeQueryRef": "Availability Loss"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "dLine_productivity"
+                      }
+                    },
+                    "Property": "Batch"
+                  }
+                },
+                "Function": 2
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "layout": [
+        {
+          "properties": {
+            "maxTiles": {
+              "expr": {
+                "Literal": {
+                  "Value": "6L"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "value": [
+        {
+          "properties": {
+            "horizontalAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'left'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "label": [
+        {
+          "properties": {
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "textWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "spacing": [
+        {
+          "properties": {
+            "verticalSpacing": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "d79c3e2464c628342c30",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dLine_productivity"
+                  }
+                },
+                "Property": "Total Time"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "75ffe79d4910c03356a7",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dLine_productivity"
+                  }
+                },
+                "Property": "Batch"
+              }
+            },
+            "Function": 2
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "4cfc01c5bbd75c675791",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Key Measures"
+              }
+            },
+            "Property": "Average Deviation from Minimum Batch Time"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "395a6a93020086910cbb",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Key Measures"
+              }
+            },
+            "Property": "Availability Loss"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ea0360d27a0762a15260",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Key Measures"
+              }
+            },
+            "Property": "Total Downtime"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}
