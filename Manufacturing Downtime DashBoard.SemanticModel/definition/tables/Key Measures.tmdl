@@ -34,16 +34,104 @@ table 'Key Measures'
 		lineageTag: e90126e3-b8ff-4595-8ae2-42dc3f3a3b9e
 
 	measure 'Operator Efficiency' =
-			DIVIDE(
-						[Total Downtime],
-						COUNT(dLine_productivity[Batch])
-					)
-		formatString: #,0.00%;-#,0.00%;#,0.00%
+			
+			VAR IdealTime =
+			    SUMX (
+			        dLine_productivity,
+			        RELATED ( dProducts[Min batch time] )
+			    )
+			VAR ActualTime =
+			    SUM ( dLine_productivity[Total Time] )
+			RETURN
+			    DIVIDE ( IdealTime, ActualTime )
+		formatString: #,0%;-#,0%;#,0%
 		lineageTag: 0bc4a67a-5c57-4f6b-9d03-d842d2519979
 
 	measure 'Availability Loss' = CALCULATE(DIVIDE([Total Downtime],sum(dLine_productivity[Total Time]),0))
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: bef9af73-5b7c-4660-ac23-b662587cbcd2
+
+	measure Operators = DISTINCTCOUNT(dLine_productivity[Operator])
+		formatString: 0
+		lineageTag: 3336f15c-ea21-42cc-be70-5c494e0dd413
+
+	measure 'Avg. Batch' = ```
+			AVERAGE(dLine_productivity[Total Time]) 
+			```
+		lineageTag: 8ca26a96-a6eb-4a61-8b79-96f63854396a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Ideal Time' = SUMX(dLine_productivity,RELATED(dProducts[Min batch time]))
+		formatString: 0
+		lineageTag: 70a955a9-a8fd-4745-825b-d5808dc16e75
+
+	measure 'Total Production time' = SUMX(dLine_productivity,DATEDIFF('dLine_productivity'[Start DateTime],'dLine_productivity'[End DateTime],MINUTE))
+		formatString: 0
+		lineageTag: 1ac1cbff-3722-40b7-841f-75fd7e8fc376
+
+	measure 'Production Efficiency' = ```
+			DIVIDE([Total Ideal Time],[Total Production time]) 
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 1e61322b-6788-43b7-8b5a-45e9f9000534
+
+	measure 'Total Batches' = ```
+			DISTINCTCOUNT(dLine_productivity[Batch]) 
+			```
+		formatString: 0
+		lineageTag: fa5622bc-2889-46e1-95cd-9a159dec2a58
+
+	measure '# of Batches Exceeding Minimum Time' = ```
+			
+						CALCULATE(
+							COUNT(dLine_productivity[Batch]),
+							FILTER(dLine_productivity,'dLine_productivity'[Total Time] = RELATED(dProducts[Min batch time]))
+						)
+			```
+		formatString: 0
+		lineageTag: a7175dcf-0fc8-439c-8197-6f831d3700a7
+
+	measure 'Inefficient Batches' =
+			
+			COUNTROWS(
+			    FILTER(
+			        dLine_productivity,
+			        VAR ActualTime =
+			            DATEDIFF('dLine_productivity'[Start DateTime], 'dLine_productivity'[End DateTime], MINUTE)
+			        VAR IdealTime =
+			            RELATED('dProducts'[Min Batch Time])
+			        VAR Efficiency =
+			            DIVIDE(IdealTime, ActualTime, 0) * 100
+			        RETURN Efficiency < 70
+			    )
+			)
+		formatString: 0
+		lineageTag: 2e98c3a2-b56c-4f42-b46a-05301a5134f9
+
+	measure Inefficiency = ```
+			DIVIDE([Inefficient Batches],[Total Batches],0) 
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 39e1945a-1fdd-4d32-b97f-2b900619fcb7
+
+	measure 'The Most Inefficient Operator' =
+			
+			VAR OperatorPerformance =
+			    SUMMARIZECOLUMNS (
+			        'dLine_productivity'[Operator],
+			        "OperatorInefficiency", [Inefficiency]
+			    )
+			VAR TopPerformer =
+			    TOPN (
+			        1,
+			        OperatorPerformance,
+			        [OperatorInefficiency],
+			        DESC
+			    )
+			RETURN
+			    MINX(TopPerformer, [Operator])
+		lineageTag: 3641d665-74c0-4bad-8335-ecfceae9597a
 
 	column Column
 		isHidden

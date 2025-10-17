@@ -1,0 +1,227 @@
+{
+  "name": "ManufacturingDowntimeProTheme",
+  "description": "Professional Power BI theme for downtime analysis with industry-standard color conventions, accessibility compliance, and developer-friendly structure",
+  "themeVersion": "1.2",
+  "author": "Your Name/Team",
+  "createdDate": "2024-03-20",
+  "lastUpdated": "2024-03-20",
+  
+  // --- THEME VARIABLES (CRUCIAL FOR MAINTAINABILITY) ---
+  "variables": {
+    "primary": "#00C9B0",
+    "secondary": "#4A90E2",
+    "critical": "#FF4136",   // Industry standard for critical downtime
+    "warning": "#FFDC00",    // Yellow for warnings
+    "normal": "#2ECC40",     // Green for operational
+    "maintenance": "#0074D9", // Blue for maintenance activities
+    "oee": "#FF851B",        // Orange for OEE metrics
+    "background": "#0A192F",
+    "backgroundLight": "#1A2D4D",
+    "textPrimary": "#FFFFFF",
+    "textSecondary": "#B8C2CC",
+    "gridLine": "#2A3D5C",
+    "border": "#2A3D5C",
+    "accent1": "#8A2BE2",    // Purple for secondary metrics
+    "accent2": "#FF6B6B",    // Pink for alternative metrics
+    "accent3": "#5DADE2"     // Cyan for supporting data
+  },
+  
+  // --- CORE THEMING ---
+  "background": "{background}",
+  "foreground": "{textPrimary}",
+  
+  "title": {
+    "fontFamily": "Segoe UI",
+    "fontSize": 20,
+    "color": "{textPrimary}",
+    "bold": true,
+    "underline": false
+  },
+  
+  "card": {
+    "background": {
+      "solid": {
+        "color": "{backgroundLight}"
+      }
+    },
+    "border": {
+      "show": true,
+      "color": "{border}",
+      "width": 1
+    },
+    "title": {
+      "show": true,
+      "fontFamily": "Segoe UI",
+      "fontSize": 14,
+      "color": "{textPrimary}",
+      "bold": true
+    },
+    "text": {
+      "fontFamily": "Segoe UI",
+      "fontSize": 12,
+      "color": "{textPrimary}"
+    }
+  },
+  
+  // --- CHART SPECIFIC STYLING (WITH INDUSTRY BEST PRACTICES) ---
+  "barChart": {
+    "dataPoint": {
+      "fill": {
+        "dataColor": true
+      },
+      "showAllDataPoints": true
+    },
+    "categoryAxis": {
+      "show": true,
+      "color": "{textSecondary}",
+      "fontSize": 10,
+      "labelDisplayUnits": "auto",
+      "labelDensity": 100
+    },
+    "valueAxis": {
+      "show": true,
+      "color": "{textSecondary}",
+      "fontSize": 10,
+      "formatString": "0.0%"
+    },
+    "legend": {
+      "show": true,
+      "position": "Bottom",
+      "fontFamily": "Segoe UI",
+      "fontSize": 10,
+      "color": "{textSecondary}"
+    },
+    "title": {
+      "show": true,
+      "fontFamily": "Segoe UI",
+      "fontSize": 14,
+      "color": "{textPrimary}",
+      "bold": true
+    }
+  },
+  
+  "lineChart": {
+    "dataPoint": {
+      "shape": "Circle",
+      "size": 6,
+      "fill": {
+        "solid": {
+          "color": "{dataColor}"
+        }
+      },
+      "showAllDataPoints": true
+    },
+    "lineThickness": 2,
+    "axisTitle": {
+      "show": true,
+      "fontFamily": "Segoe UI",
+      "fontSize": 12,
+      "color": "{textSecondary}"
+    },
+    "categoryAxis": {
+      "show": true,
+      "color": "{textSecondary}",
+      "fontSize": 10
+    },
+    "valueAxis": {
+      "show": true,
+      "color": "{textSecondary}",
+      "fontSize": 10
+    }
+  },
+  
+  // --- TABLE STYLING (ESSENTIAL FOR DOWNTIME ANALYSIS) ---
+  "table": {
+    "background": "{background}",
+    "gridLineColor": "{gridLine}",
+    "gridLineThickness": 1,
+    "columnHeaders": {
+      "background": "{backgroundLight}",
+      "fontFamily": "Segoe UI",
+      "fontSize": 11,
+      "color": "{textPrimary}",
+      "bold": true
+    },
+    "values": {
+      "fontFamily": "Segoe UI",
+      "fontSize": 10,
+      "color": "{textPrimary}",
+      "conditionalFormatting": {
+        "backgroundColor": {
+          "show": true
+        }
+      }
+    },
+    "total": {
+      "fontFamily": "Segoe UI",
+      "fontSize": 11,
+      "color": "{textPrimary}",
+      "bold": true
+    }
+  },
+  
+  // --- CRITICAL FOR DOWNTIME ANALYSIS: CONDITIONAL FORMATTING SUPPORT ---
+  "conditionalFormatting": {
+    "backgroundColor": {
+      "show": true
+    },
+    "fontColor": {
+      "show": true
+    }
+  },
+  
+  // --- MAP VISUALS (FOR PLANT FLOOR ANALYSIS) ---
+  "map": {
+    "background": "{background}",
+    "dataPoint": {
+      "fill": {
+        "solid": {
+          "color": "{dataColor}"
+        }
+      },
+      "borderColor": "{backgroundLight}",
+      "borderThickness": 1
+    },
+    "legend": {
+      "show": true,
+      "position": "Bottom",
+      "fontFamily": "Segoe UI",
+      "fontSize": 10,
+      "color": "{textSecondary}"
+    }
+  },
+  
+  // --- SPLICER STYLING (FOR FILTERING DOWNTIME CAUSES) ---
+  "slicer": {
+    "background": "{background}",
+    "selectionColor": "{primary}",
+    "fontFamily": "Segoe UI",
+    "fontSize": 10,
+    "color": "{textPrimary}",
+    "showLabel": true,
+    "labelColor": "{textSecondary}",
+    "labelFontSize": 10
+  },
+  
+  // --- ACCESSIBILITY COMPLIANCE (WCAG 2.1 AA) ---
+  "accessibility": {
+    "contrastRatio": {
+      "text": "7.5:1",  // Text to background
+      "charts": "4.5:1" 
+    },
+    "colorBlindFriendly": true,
+    "highContrastMode": {
+      "background": "#000000",
+      "text": "#FFFFFF"
+    }
+  },
+  
+
+  "themeSettings": {
+    "themeType": "Custom",
+    "supportsDarkMode": true,
+    "supportsLightMode": false,
+    "exportable": true,
+    "versionControl": true
+  }
+}

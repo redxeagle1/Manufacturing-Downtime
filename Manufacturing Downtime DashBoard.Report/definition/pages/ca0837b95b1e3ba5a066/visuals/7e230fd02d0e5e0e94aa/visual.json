@@ -1,0 +1,117 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "7e230fd02d0e5e0e94aa",
+  "position": {
+    "x": 16,
+    "y": 64,
+    "z": 0,
+    "height": 128,
+    "width": 1248
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Key Measures"
+                    }
+                  },
+                  "Property": "Operators"
+                }
+              },
+              "queryRef": "Key Measures.operators",
+              "nativeQueryRef": "Operators"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dLine_productivity"
+                        }
+                      },
+                      "Property": "Product"
+                    }
+                  },
+                  "Function": 2
+                }
+              },
+              "queryRef": "Min(dLine_productivity.Product)",
+              "nativeQueryRef": "Count of Product"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Key Measures"
+                    }
+                  },
+                  "Property": "The Most Inefficient Operator"
+                }
+              },
+              "queryRef": "Key Measures.The Most Inefficient operator",
+              "nativeQueryRef": "The Most Inefficient Operator"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Key Measures"
+                    }
+                  },
+                  "Property": "Inefficiency"
+                }
+              },
+              "queryRef": "Key Measures.Inefficiency",
+              "nativeQueryRef": "Inefficiency"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Key Measures"
+                  }
+                },
+                "Property": "Operators"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "layout": [
+        {
+          "properties": {
+            "maxTiles": {
+              "expr": {
+                "Literal": {
+                  "Value": "6L"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -3014,6 +3014,16 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.582
 			          }
+			        },
+			        {
+			          "Downtime": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -3726,6 +3736,666 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "key_measure.operators": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Key Measures",
+			          "ConceptualProperty": "Operators"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "operators": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "worker": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "machinist": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "operative": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "hand": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "key_measure.avg__batch": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Key Measures",
+			          "ConceptualProperty": "Avg. Batch"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "avg. batch": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "average . batch": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "avg. consignment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "avg. collection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "avg. lot": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "avg. group": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "avg. set": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "avg. bunch": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        }
+			      ]
+			    },
+			    "key_measure.total_ideal_time": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Key Measures",
+			          "ConceptualProperty": "Total Ideal Time"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "total ideal time": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ideal time": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "total ideal duration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "total ideal interval": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "total ideal moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "ideal duration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "ideal interval": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "ideal moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "total ideal period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "total ideal timetable": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "ideal period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "ideal timetable": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "key_measure.total_production_time": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Key Measures",
+			          "ConceptualProperty": "Total Production time"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "total production time": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "production time": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "total production duration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "total production interval": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "total production moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "production duration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "production interval": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "production moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "total production period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "total production timetable": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "production period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "production timetable": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "key_measure.production_efficiency": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Key Measures",
+			          "ConceptualProperty": "Production Efficiency"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "production efficiency": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "efficiency": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "production competence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "production efficacy": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "production effectiveness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "production productivity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "production proficiency": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "production adeptness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "competence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "efficacy": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "effectiveness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "proficiency": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
+			    },
+			    "key_measure.total_batches": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Key Measures",
+			          "ConceptualProperty": "Total Batches"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "total batches": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "batches": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "aggregate batch": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "overall batch": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "key_measure.of_batches_exceeding_minimum_time": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Key Measures",
+			          "ConceptualProperty": "# of Batches Exceeding Minimum Time"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "# of batches exceeding minimum time": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "key_measure.inefficient_batches": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Key Measures",
+			          "ConceptualProperty": "Inefficient Batches"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "inefficient batches": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "batches": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "key_measure.inefficiency": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Key Measures",
+			          "ConceptualProperty": "Inefficiency"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "inefficiency": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "key_measure.the_most_inefficient_operator": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Key Measures",
+			          "ConceptualProperty": "The Most Inefficient Operator"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "the most inefficient operator": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "the most inefficient worker": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "the most inefficient machinist": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "the most inefficient operative": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "the most inefficient hand": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
@@ -4349,6 +5019,369 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
+			    "d_line_productivity_has_key_measure_the_most_inefficient_operator": {
+			      "Binding": {
+			        "ConceptualEntity": "dLine_productivity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_line_productivity": {
+			          "Target": {
+			            "Entity": "d_line_productivity"
+			          }
+			        },
+			        "key_measure.the_most_inefficient_operator": {
+			          "Target": {
+			            "Entity": "key_measure.the_most_inefficient_operator"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_line_productivity"
+			            },
+			            "Object": {
+			              "Role": "key_measure.the_most_inefficient_operator"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_line_productivities_have_the_most_inefficient_operator"
+			        }
+			      ]
+			    },
+			    "d_line_productivity_has_key_measure_inefficiency": {
+			      "Binding": {
+			        "ConceptualEntity": "dLine_productivity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_line_productivity": {
+			          "Target": {
+			            "Entity": "d_line_productivity"
+			          }
+			        },
+			        "key_measure.inefficiency": {
+			          "Target": {
+			            "Entity": "key_measure.inefficiency"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_line_productivity"
+			            },
+			            "Object": {
+			              "Role": "key_measure.inefficiency"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_line_productivities_have_inefficiency"
+			        }
+			      ]
+			    },
+			    "d_line_productivity_has_key_measure_inefficient_batches": {
+			      "Binding": {
+			        "ConceptualEntity": "dLine_productivity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_line_productivity": {
+			          "Target": {
+			            "Entity": "d_line_productivity"
+			          }
+			        },
+			        "key_measure.inefficient_batches": {
+			          "Target": {
+			            "Entity": "key_measure.inefficient_batches"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_line_productivity"
+			            },
+			            "Object": {
+			              "Role": "key_measure.inefficient_batches"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_line_productivities_have_inefficient_batches"
+			        }
+			      ]
+			    },
+			    "d_line_productivity_has_key_measure_of_batches_exceeding_minimum_time": {
+			      "Binding": {
+			        "ConceptualEntity": "dLine_productivity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_line_productivity": {
+			          "Target": {
+			            "Entity": "d_line_productivity"
+			          }
+			        },
+			        "key_measure.of_batches_exceeding_minimum_time": {
+			          "Target": {
+			            "Entity": "key_measure.of_batches_exceeding_minimum_time"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_line_productivity"
+			            },
+			            "Object": {
+			              "Role": "key_measure.of_batches_exceeding_minimum_time"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_line_productivities_have__of_batches_exceeding_minimum_time"
+			        }
+			      ]
+			    },
+			    "d_line_productivity_has_key_measure_total_batches": {
+			      "Binding": {
+			        "ConceptualEntity": "dLine_productivity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_line_productivity": {
+			          "Target": {
+			            "Entity": "d_line_productivity"
+			          }
+			        },
+			        "key_measure.total_batches": {
+			          "Target": {
+			            "Entity": "key_measure.total_batches"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_line_productivity"
+			            },
+			            "Object": {
+			              "Role": "key_measure.total_batches"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_line_productivities_have_total_batches"
+			        }
+			      ]
+			    },
+			    "key_measure_has_production_efficiency": {
+			      "Binding": {
+			        "ConceptualEntity": "Key Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "key_measure": {
+			          "Target": {
+			            "Entity": "key_measure"
+			          }
+			        },
+			        "key_measure.production_efficiency": {
+			          "Target": {
+			            "Entity": "key_measure.production_efficiency"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "key_measure"
+			            },
+			            "Object": {
+			              "Role": "key_measure.production_efficiency"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "key_measures_have_production_efficiency"
+			        }
+			      ]
+			    },
+			    "key_measure_has_total_production_time": {
+			      "Binding": {
+			        "ConceptualEntity": "Key Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "key_measure": {
+			          "Target": {
+			            "Entity": "key_measure"
+			          }
+			        },
+			        "key_measure.total_production_time": {
+			          "Target": {
+			            "Entity": "key_measure.total_production_time"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "key_measure"
+			            },
+			            "Object": {
+			              "Role": "key_measure.total_production_time"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "key_measures_have_total_production_time"
+			        }
+			      ]
+			    },
+			    "d_product_has_key_measure_total_ideal_time": {
+			      "Binding": {
+			        "ConceptualEntity": "dProducts"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_product": {
+			          "Target": {
+			            "Entity": "d_product"
+			          }
+			        },
+			        "key_measure.total_ideal_time": {
+			          "Target": {
+			            "Entity": "key_measure.total_ideal_time"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_product"
+			            },
+			            "Object": {
+			              "Role": "key_measure.total_ideal_time"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_products_have_total_ideal_time"
+			        }
+			      ]
+			    },
+			    "d_line_productivity_has_key_measure_total_ideal_time": {
+			      "Binding": {
+			        "ConceptualEntity": "dLine_productivity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_line_productivity": {
+			          "Target": {
+			            "Entity": "d_line_productivity"
+			          }
+			        },
+			        "key_measure.total_ideal_time": {
+			          "Target": {
+			            "Entity": "key_measure.total_ideal_time"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_line_productivity"
+			            },
+			            "Object": {
+			              "Role": "key_measure.total_ideal_time"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_line_productivities_have_total_ideal_time"
+			        }
+			      ]
+			    },
+			    "d_line_productivity_has_key_measure_avg__batch": {
+			      "Binding": {
+			        "ConceptualEntity": "dLine_productivity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_line_productivity": {
+			          "Target": {
+			            "Entity": "d_line_productivity"
+			          }
+			        },
+			        "key_measure.avg__batch": {
+			          "Target": {
+			            "Entity": "key_measure.avg__batch"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_line_productivity"
+			            },
+			            "Object": {
+			              "Role": "key_measure.avg__batch"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_line_productivities_have_avg__batch"
+			        }
+			      ]
+			    },
+			    "d_line_productivity_has_key_measure_operators": {
+			      "Binding": {
+			        "ConceptualEntity": "dLine_productivity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_line_productivity": {
+			          "Target": {
+			            "Entity": "d_line_productivity"
+			          }
+			        },
+			        "key_measure.operators": {
+			          "Target": {
+			            "Entity": "key_measure.operators"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_line_productivity"
+			            },
+			            "Object": {
+			              "Role": "key_measure.operators"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_line_productivities_have_operators"
+			        }
+			      ]
+			    },
 			    "summarize_product_has_AVG_batch_minite": {
 			      "Binding": {
 			        "ConceptualEntity": "Summarize_products"
@@ -4547,15 +5580,15 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "f_line_downtime_has_key_measure_operator_efficiency": {
+			    "d_product_has_key_measure_operator_efficiency": {
 			      "Binding": {
-			        "ConceptualEntity": "fLine_downtime"
+			        "ConceptualEntity": "dProducts"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "f_line_downtime": {
+			        "d_product": {
 			          "Target": {
-			            "Entity": "f_line_downtime"
+			            "Entity": "d_product"
 			          }
 			        },
 			        "key_measure.operator_efficiency": {
@@ -4568,7 +5601,7 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "f_line_downtime"
+			              "Role": "d_product"
 			            },
 			            "Object": {
 			              "Role": "key_measure.operator_efficiency"
@@ -4576,7 +5609,7 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "f_line_downtimes_have_operator_efficiency"
+			          "ID": "d_products_have_operator_efficiency"
 			        }
 			      ]
 			    },
@@ -5071,7 +6104,7 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "d_line_productivities_have_operators"
+			          "ID": "d_line_productivities_have_operators1"
 			        },
 			        {
 			          "Verb": {

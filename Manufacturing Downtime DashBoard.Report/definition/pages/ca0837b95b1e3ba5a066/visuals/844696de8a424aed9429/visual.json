@@ -1,0 +1,107 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "844696de8a424aed9429",
+  "position": {
+    "x": 16,
+    "y": 464,
+    "z": 4,
+    "height": 256,
+    "width": 688,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dLine_productivity"
+                    }
+                  },
+                  "Property": "Operator"
+                }
+              },
+              "queryRef": "dLine_productivity.Operator",
+              "nativeQueryRef": "Operator",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Key Measures"
+                    }
+                  },
+                  "Property": "Production Efficiency"
+                }
+              },
+              "queryRef": "Key Measures.Production Efficiency",
+              "nativeQueryRef": "Production Efficiency"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Key Measures"
+                  }
+                },
+                "Property": "Production Efficiency"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "680785b6459ab3aa1e82",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Key Measures"
+              }
+            },
+            "Property": "Production Efficiency"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a480d68a421b678c0502",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dLine_productivity"
+              }
+            },
+            "Property": "Operator"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}
